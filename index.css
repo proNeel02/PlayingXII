@@ -1,3 +1,24 @@
 #nav{
     height: 50px;
 }
+
+#components{
+    margin: 80px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#components input{
+    padding: 20px;
+    /* padding-left: 100px; */
+    padding-right: 200px;
+     height: 30px;
+}
+
+#components button{
+    /* margin : 0px 0px 100px 0px; */
+    margin-left: -70px;
+    padding: 10px;
+}
+
