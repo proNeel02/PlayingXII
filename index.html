@@ -17,7 +17,15 @@
 
   <body>
     <header>
-     
+      <div id="components">
+      <nav class="navbar navbar-light bg-light">
+          <form class="form-inline d-flex">
+            <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+            <button class="btn btn-info my-2 my-sm-0" type="submit">Search</button>
+          </form>
+       
+      </nav>
+    </div>
     </header>
  
     <main>
@@ -31,11 +39,7 @@
             </div>
 
             <ul id="list" class="list-group">
-                <li class="list-group-item border d-flex mt-5 justify-content-between">
-                    <h3 class="flex-grow-1">KL Rahul</h3>
-                        <button class="btn btn-warning mx-3" onclick="edit(this)">Edit</button>
-                        <button class="btn btn-danger" onclick="remove(this)">Remove</button>
-                </li>
+               
             </ul>
 
         </div>
