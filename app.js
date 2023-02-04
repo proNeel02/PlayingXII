@@ -2,6 +2,8 @@ let add = document.getElementById("addbtn");
 let input = document.getElementById("input");
 let list = document.getElementById("list");
 
+let searchbox = document.getElementById('searchbox');
+list.style.display = "block";
 if (localStorage.length <= 0) {
   let h3 = document.createElement("h3");
   h3.setAttribute("class", "mx-3 p-5");
@@ -18,7 +20,7 @@ for (let i = 0; i < localStorage.length; i++) {
   li.classList =
     "list-group-item border d-flex mt-3 over-flow-hidden justify-content-between";
 
-  li.innerHTML = ` <h3 class="flex-grow-1">${localStorage.key(i)}</h3>
+  li.innerHTML = `<h3 class="flex-grow-1">${localStorage.key(i)}</h3>
     <button class="btn btn-warning mx-3" onclick= 'edit(this)'>Edit</button>
     <button class="btn btn-danger" onclick='remove(this)'>Remove</button>`;
 }
@@ -69,7 +71,6 @@ let eit = "";
 let done = "";
 
 function edit(currentElement) {
-    
   if (currentElement.textContent === "Edit") {
     eit = currentElement.previousElementSibling.textContent;
     localStorage.removeItem(eit);
@@ -109,3 +110,35 @@ function edit(currentElement) {
     );
   }
 }
+
+let searchInput = document.getElementById("searchInput");
+let searchBtn = document.getElementById("searchBtn");
+
+searchBtn.addEventListener("click", () => {
+  let searchVal = searchInput.value;
+
+  alert(searchVal);
+  if (searchVal === "") {
+    return;
+  }
+
+  list.style.display= "none";
+//   let ul = document.createElement('ul');
+//   ul.setAttribute('id','list');
+//   ul.setAttribute('class','list-group');
+
+//   for (let i = 0; i < localStorage.length; i++) {
+//     if (localStorage.key(i).toUpperCase === searchVal.toUpperCase) {
+//       let li = document.createElement("li");
+//       ul.appendChild(li);
+//       // li.classList.add("list-group-item");
+//       li.classList =
+//         "list-group-item border d-flex mt-3 over-flow-hidden justify-content-between";
+
+//       li.innerHTML = ` <h3 class="flex-grow-1">${localStorage.key(i)}</h3>
+//               <button class="btn btn-warning mx-3" onclick= 'edit(this)'>Edit</button>
+//               <button class="btn btn-danger" onclick='remove(this)'>Remove</button>`;
+//     }
+//   }
+//   searchbox.appendChild(ul);
+});
